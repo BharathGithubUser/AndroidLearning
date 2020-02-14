@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.belivnat.tasks.R;
 import com.belivnat.tasks.modules.scheduler.view.AlarmReceiver;
@@ -64,10 +65,11 @@ public class SchedulerActivity extends AppCompatActivity {
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, hour);
         calendar.set(Calendar.MINUTE, minute);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), alarmIntent);
+        alarmManager.setExact(AlarmManager.RTC, calendar.getTimeInMillis(), alarmIntent);
         Log.d("User Picked Time :", calendar.getTime().toString());
 //        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
 //                60000, alarmIntent);
+        Toast.makeText(this, "Alarm Set Sucessfully", Toast.LENGTH_SHORT).show();
     }
 
     public void showTime(int hour, int minute) {

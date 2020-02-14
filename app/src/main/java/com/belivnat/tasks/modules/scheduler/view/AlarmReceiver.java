@@ -21,7 +21,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationManager notificationManager = (NotificationManager)
                 context.getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context.getApplicationContext(), "TASK")
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_notifiation_icon)
                 .setContentTitle("Scheduled Notification")
                 .setContentText("You Have Set Notification to Receive Now")
                 .setStyle(new NotificationCompat.BigTextStyle()
