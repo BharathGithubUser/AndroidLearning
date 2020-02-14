@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.belivnat.tasks.R;
 import com.belivnat.tasks.model.HomeMenuOptions;
 import com.belivnat.tasks.modules.crud.CrudActivity;
+import com.belivnat.tasks.modules.invoicer.InvoicerActivity;
 import com.belivnat.tasks.modules.multisearch.MultiSelectActivity;
 import com.belivnat.tasks.modules.news.view.NewsActivity;
 import com.belivnat.tasks.modules.scheduler.SchedulerActivity;
@@ -52,6 +53,10 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.HomeM
         homeMenuOptions.add(
                 new HomeMenuOptions("CRUD", "https://cdn3.iconfinder.com/data/icons/search-engine-optimization-plus/64/crud_create_read_update_delete-512.png",
                         new Intent(HomeActivity.this, CrudActivity.class))
+        );
+        homeMenuOptions.add(
+                new HomeMenuOptions("Invoicer", "https://previews.123rf.com/images/ahasoft2000/ahasoft20001608/ahasoft2000160800164/61032789-invoice-icon-vector-style-is-flat-iconic-symbol-with-rounded-angles-black-color-white-background-.jpg",
+                        new Intent(HomeActivity.this, InvoicerActivity.class))
         );
         homeRecyclerView = findViewById(R.id.rv_home_list);
         homeRecyclerView.setMotionEventSplittingEnabled(false);

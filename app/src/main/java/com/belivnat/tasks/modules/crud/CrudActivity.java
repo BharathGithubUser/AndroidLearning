@@ -135,7 +135,23 @@ public class CrudActivity extends BaseActivity implements CrudAdapter.CrudOnClic
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        Executors.newSingleThreadExecutor().execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                db.crudDao().delete(crudEntities.get(position));
+                                crudEntities =  db.crudDao().getAll();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        someDataList.remove(position);
+                                        if (crudEntities.size() == 0) {
+                                            initDataFromDB();
+                                        }
+                                        updateList(false,0);
+                                    }
+                                });
+                            }
+                        });
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {

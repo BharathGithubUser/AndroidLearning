@@ -13,9 +13,10 @@
         android:roundIcon="@drawable/task"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".modules.invoicer.InvoicerActivity"></activity>
         <activity
             android:name=".modules.crud.CrudActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".modules.simplegame.GameActivity" />
         <activity android:name=".modules.simplegame.GameMainActivity" />
         <activity android:name=".modules.multisearch.MultiSelectActivity" />
